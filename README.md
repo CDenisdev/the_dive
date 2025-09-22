@@ -1,63 +1,64 @@
-# Laberinto del Gato y el Ratón 🐭🐱
+# 🌀 Laberinto Maestro en C++
 
-Un juego de estrategia implementado en Python donde un gato inteligente persigue a un ratón controlado por el usuario en un laberinto con obstáculos.
+## 📖 Descripción
+Este proyecto genera y resuelve **laberintos aleatorios** en C++.  
+Cada vez que se ejecuta, se crea un laberinto distinto con una **entrada** y una **salida** siempre conectadas.  
+El programa también resuelve automáticamente el laberinto mostrando el **camino más corto**.
 
-## Características
+---
 
-- Tablero de 8x8 con obstáculos (#) y objetivos (Q)
-- Sistema de turnos: usuario controla al ratón, IA controla al gato
-- Algoritmo Minimax para la inteligencia artificial del gato
-- Heurística basada en distancia Manhattan
-- Interfaz de consola con visualización del tablero
-- Límite de 20 turnos 
+## ⚙️ Funcionalidades
+- Generación de un **laberinto aleatorio y resoluble** usando **DFS con backtracking**.  
+- Resolución automática usando **BFS**, que encuentra el **camino más corto** entre entrada y salida.  
+- Tamaño configurable:  
+  - Por defecto 10x10.  
+  - El usuario puede ingresar el número de filas y columnas al iniciar el programa.  
+- Visualización en consola con caracteres ASCII:  
+  - `#` → muro  
+  - `*` → camino libre  
+  - `S` → entrada  
+  - `E` → salida  
+  - `o` → camino más corto encontrado  
 
-## Cómo Ejecutar
+---
 
-1. Asegúrate de tener Python 3.x instalado
-2. Descarga el archivo `minimax_lab.py`
-3. Ejecuta en la terminal:
+## 🖥️ Ejemplo de ejecución
 
-## Controles
-
-- **w**: Mover el ratón hacia arriba
-- **a**: Mover el ratón hacia la izquierda  
-- **s**: Mover el ratón hacia abajo
-- **d**: Mover el ratón hacia la derecha
-
-## Cómo Funciona
-
-### Algoritmo Minimax
-El gato utiliza el algoritmo Minimax con una profundidad de 4 para anticipar los movimientos del ratón y tomar decisiones estratégicas. En cada turno:
-
-1. El gato genera todos sus movimientos posibles
-2. Para cada movimiento, simula los posibles contra-movimientos del ratón
-3. Evalúa cada escenario usando una función heurística
-4. Selecciona el movimiento que maximiza sus chances de atrapar al ratón
-
-### Función Heurística
-La función de evaluación se basa en la distancia Manhattan entre el gato y el ratón:
-
-heurística = 100 - (|gato_x - ratón_x| + |gato_y - ratón_y|)
+# # # # # # # # #
+S o o # # # # # #
+# # o # # # # # #
+# # o o o # # # #
+# # # # o # # # #
+# # # # o # # # #
+# # # # o o o o o E
+# # # # # # # # #
 
 
-### Estructura del Código
-- `tablero`: Matriz 8x8 que representa el laberinto
-- `movimientos_posibles()`: Calcula movimientos válidos para cada jugador
-- `minimax()`: Implementa el algoritmo de decisión
-- `heuristica()`: Evalúa qué tan buena es una posición para el gato
-- `estado_final()`: Determina si el juego ha terminado
+---
 
-## Que fue lo que mas me costo
-Lo que mas me costo fue primero entender que era el algoritmo minimax, como funciona 
-despues de eso aplicarlo al juego del gato y raton.
+## 🛠️ Tecnologías usadas
+- Lenguaje: **C++**  
+- Librerías estándar:  
+  - `<vector>` para la matriz dinámica  
+  - `<queue>` para BFS  
+  - `<algorithm>` y `<random>` para aleatoriedad en DFS  
 
-## Posibles Mejoras
-- Implementar poda alfa-beta para optimizar el algoritmo Minimax
-- Añadir múltiples niveles de dificultad
-- Crear una interfaz gráfica
-- Implementar diferentes estrategias para el ratón
-- Permitir configuración de tableros personalizados
+---
 
-## Autor
+## 📚 Algoritmos
+- **DFS (Depth First Search) con backtracking**  
+  Usado para **tallar** el laberinto desde la entrada, creando caminos aleatorios.  
 
-Carlos Denis
+- **BFS (Breadth First Search)**  
+  Usado para **resolver** el laberinto, encontrando siempre el camino más corto de `S` a `E`.
+
+---
+
+## 🚀 Cómo compilar y ejecutar
+1. Compilar con g++:
+   ```bash
+   g++ laberinto.cpp -o laberinto
+
+## Ejecutar 
+./laberinto
+
